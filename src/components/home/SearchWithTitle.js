@@ -15,8 +15,8 @@ const SearchWithTitle = (props) => {
   const { zoneid, token, searchQuery, name, query, currentTab } = props;
   const { configData } = useSelector((state) => state.configData);
 
-  const getBannerTexts1 = t("Get your car rental service with")
-  const getBannerSubTexts = t("with affordable price.")
+  const getBannerTexts1 = t("Get your car rental service with");
+  const getBannerSubTexts = t("with affordable price.");
 
   const getBannerTexts = () => {
     switch (getCurrentModuleType()) {
@@ -66,7 +66,7 @@ const SearchWithTitle = (props) => {
       p={isSmall ? "25px" : "20px"}
       mt={ModuleTypes.RENTAL === "rental" ? { xs: 0, sm: 2 } : 0}
     >
-      <CustomStackFullWidth
+      {/* <CustomStackFullWidth
         alignItems="center"
         justifyContent="center"
         spacing={1.5}
@@ -97,7 +97,7 @@ const SearchWithTitle = (props) => {
         >
           {t(getBannerTexts().subTitle)}
         </Typography>
-      </CustomStackFullWidth>
+      </CustomStackFullWidth> */}
 
       {moduleType === "parcel" ? (
         <TrackParcelFromHomePage />

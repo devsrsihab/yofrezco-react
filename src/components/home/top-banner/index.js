@@ -14,7 +14,7 @@ import LeftCar from "/public/static/rental/left_car.png";
 import RightCar from "/public/static/rental/right_car.png";
 import { useEffect, useState } from "react";
 import Image from "next/image";
-import banngerBg from "public/banner-bg.jpeg";
+import banngerBg from "public/banner_bg-2.jpeg";
 
 const TopBanner = () => {
   const [moduleType, setModuleType] = useState(null);
