@@ -16,7 +16,7 @@ const FooterComponent = (props) => {
         mt: {
           xs: "6rem",
           sm: "3rem",
-          md: router.pathname === "/" ? "2rem" : "9rem",
+          md: router.pathname === "/" ? "2rem" : "6rem",
         },
       }}
     >
