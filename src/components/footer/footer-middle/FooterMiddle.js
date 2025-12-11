@@ -72,12 +72,22 @@ const FooterMiddle = (props) => {
               configData={configData}
               landingPageData={landingPageData}
             />
-            <AppLinks landingPageData={{
-              app_store_link: landingPageData?.user_app_download_section?.download_user_app_links?.apple_store_url,
-              play_store_link: landingPageData?.user_app_download_section?.download_user_app_links?.playstore_url,
-              app_status: landingPageData?.user_app_download_section?.download_user_app_links?.apple_store_url_status,
-              play_status: landingPageData?.user_app_download_section?.download_user_app_links?.playstore_url_status
-            }} />
+            <AppLinks
+              landingPageData={{
+                app_store_link:
+                  landingPageData?.user_app_download_section
+                    ?.download_user_app_links?.apple_store_url,
+                play_store_link:
+                  landingPageData?.user_app_download_section
+                    ?.download_user_app_links?.playstore_url,
+                app_status:
+                  landingPageData?.user_app_download_section
+                    ?.download_user_app_links?.apple_store_url_status,
+                play_status:
+                  landingPageData?.user_app_download_section
+                    ?.download_user_app_links?.playstore_url_status,
+              }}
+            />
           </CustomStackFullWidth>
         </Grid>
         <Grid item xs={12} sm={6} md={7.8}>

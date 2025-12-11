@@ -37,7 +37,7 @@ const menus = [
 const filterLabels = [
   { label: t("All"), value: "all" },
   { label: t("Delivery"), value: "delivery" },
-  { label: t("Take Away"), value: "take_away" },
+  { label: t("Pick Up"), value: "take_away" },
 ];
 const Filter = (props) => {
   const { selectedFilterValue, setSelectedFilterValue } = props;

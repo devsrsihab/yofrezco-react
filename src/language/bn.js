@@ -241,7 +241,7 @@ export const bengali = {
   "DELIVERY DETAILS": "تفاصيل التسليم",
   "Delivery Options": "خيارات التوصيل",
   "Home Delivery": "توصيل منزلي",
-  "Take Away": "يبعد",
+  "Pick Up": "يبعد",
   "Preferable Time": "الوقت المفضل",
   "Already have an account?": "هل لديك حساب؟",
   "Don't have an account?": "ليس لديك حساب؟",

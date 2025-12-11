@@ -49,6 +49,7 @@ const BasicInformation = (props) => {
   const handleClick = () => {
     setEditProfile((prvState) => !prvState);
   };
+  console.log(data);
   return (
     <>
       <Grid
@@ -94,7 +95,7 @@ const BasicInformation = (props) => {
                       fontSize={{ xs: "14px", sm: "14px", md: "16px" }}
                       fontWeight="700"
                     >
-                      {t("Personal Details")}
+                      {t("Personal ojo Details")}
                     </Typography>
                     {isSmall && (
                       <SmallDeviceIconButton onClick={handleClick}>
@@ -148,7 +149,7 @@ const BasicInformation = (props) => {
                           >
                             {data?.email || ""}
                           </Typography>
-                          {data?.is_email_verified === "1" ? (
+                          {data?.is_email_verified === 1 ? (
                             <VerifiedIcon style={{ marginLeft: "8px" }} />
                           ) : (
                             configData?.centralize_login

@@ -1,4 +1,8 @@
 import { Grid, Typography } from "@mui/material";
+import magnifying from "../../../public/static/footer/magnifying.svg";
+import phone from "../../../public/static/footer/phone.svg";
+import ractangle from "../../../public/static/footer/Rectangle.svg";
+
 import { Box } from "@mui/system";
 import React, { useState } from "react";
 import {
@@ -52,30 +56,10 @@ const HelpAndSupport = (props) => {
 
       <HelpGrid container spacing={2}>
         <Grid item md={4} xs={12}>
-          <Box sx={{ cursor: "pointer" }} onClick={handleOpenCloseMap}>
-            <VisitBox>
-              <HelpImgBox>
-                <img src={img1.src} alt={t("help")} />
-              </HelpImgBox>
-              <Box sx={{ textAlign: "center" }}>
-                <Typography
-                  sx={{
-                    fontSize: { xs: "18px", sm: "22px", md: "24px" },
-                    fontWeight: "700",
-                  }}
-                >
-                  {t("VISIT US")}
-                </Typography>
-                <Typography>{configData?.address}</Typography>
-              </Box>
-            </VisitBox>
-          </Box>
-        </Grid>
-        <Grid item md={4} xs={12}>
           <Link href={`mailto:${configData?.email}`}>
             <VisitBox>
               <HelpImgBox>
-                <img src={img2.src} alt={t("help")} />
+                <img src={ractangle.src} alt={t("help")} />
               </HelpImgBox>
               <Box sx={{ textAlign: "center" }}>
                 <Typography
@@ -84,7 +68,7 @@ const HelpAndSupport = (props) => {
                     fontWeight: "700",
                   }}
                 >
-                  {t("EMAIL US")}
+                  {t("Send us mails")}
                 </Typography>
                 <Typography>{configData?.email}</Typography>
               </Box>
@@ -95,7 +79,7 @@ const HelpAndSupport = (props) => {
           <Link href={`tel:${configData?.phone}`}>
             <VisitBox>
               <HelpImgBox>
-                <img src={img3.src} alt={t("help")} />
+                <img src={phone.src} alt={t("help")} />
               </HelpImgBox>
               <Box sx={{ textAlign: "center" }}>
                 <Typography
@@ -110,6 +94,26 @@ const HelpAndSupport = (props) => {
               </Box>
             </VisitBox>
           </Link>
+        </Grid>
+        <Grid item md={4} xs={12}>
+          <Box sx={{ cursor: "pointer" }} onClick={handleOpenCloseMap}>
+            <VisitBox>
+              <HelpImgBox>
+                <img src={magnifying.src} alt={t("help")} />
+              </HelpImgBox>
+              <Box sx={{ textAlign: "center" }}>
+                <Typography
+                  sx={{
+                    fontSize: { xs: "18px", sm: "22px", md: "24px" },
+                    fontWeight: "700",
+                  }}
+                >
+                  {t("Find us here")}
+                </Typography>
+                <Typography>{configData?.address}</Typography>
+              </Box>
+            </VisitBox>
+          </Box>
         </Grid>
       </HelpGrid>
       {open && (

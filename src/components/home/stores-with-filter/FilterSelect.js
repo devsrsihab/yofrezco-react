@@ -75,7 +75,7 @@ const FilterSelect = (props) => {
           {t("Delivery")}
         </MenuItem>
         <MenuItem onClick={() => handleClose("take away")}>
-          {t("Take Away")}
+          {t("Pick Up")}
         </MenuItem>
       </Menu>
     </div>
