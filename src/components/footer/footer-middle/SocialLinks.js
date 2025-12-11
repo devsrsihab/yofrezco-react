@@ -3,7 +3,16 @@ import { alpha, IconButton, Typography } from "@mui/material";
 import React from "react";
 import { useTranslation } from "react-i18next";
 import { CustomStackFullWidth } from "../../../styled-components/CustomStyles.style";
-import { Facebook, Instragram, LinkedIn, Pinterest, Twitter } from "./Icon";
+import {
+  Facebook,
+  Instragram,
+  LinkedIn,
+  Pinterest,
+  Twitter,
+  TikTok,
+  YouTube,
+  Threads,
+} from "./Icon";
 
 const SocialLinks = (props) => {
   const { configData, landingPageData } = props;
@@ -24,6 +33,12 @@ const SocialLinks = (props) => {
         return <LinkedIn />;
       case "pinterest":
         return <Pinterest />;
+      case "tiktok":
+        return <TikTok />;
+      case "youtube":
+        return <YouTube />;
+      case "threads":
+        return <Threads />;
       default:
         return <Twitter />;
     }
@@ -58,11 +73,11 @@ const SocialLinks = (props) => {
               <IconButton
                 sx={{
                   padding: "0px",
-                  color: theme.palette.primary.icon,
+                  color: "red",
                   transition: "all ease 0.5s",
                   "&:hover": {
                     transform: "scale(1.14)",
-                    color: theme.palette.primary.main,
+                    color: "#B30000",
                   },
                 }}
                 key={index}
