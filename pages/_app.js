@@ -38,11 +38,7 @@ const queryClient = new QueryClient({
 });
 
 function MyApp(props) {
-  const {
-    Component,
-    emotionCache = clientSideEmotionCache,
-    pageProps,
-  } = props;
+  const { Component, emotionCache = clientSideEmotionCache, pageProps } = props;
   const getLayout = Component.getLayout ?? ((page) => page);
   const { t } = useTranslation();
 
@@ -71,7 +67,7 @@ function MyApp(props) {
                     theme={createTheme({
                       direction: value?.settings?.direction,
                       responsiveFontSizes: value?.settings?.responsiveFontSizes,
-                      mode: value?.settings?.theme,
+                      mode: "light",
                     })}
                   >
                     <RTL direction={value?.settings?.direction}>

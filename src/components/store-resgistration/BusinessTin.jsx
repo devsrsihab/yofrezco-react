@@ -114,7 +114,7 @@ const BusinessTin = ({
         <Grid container spacing={2}>
           <Grid item xs={12} md={12} align="left">
             <Typography fontSize="18px" fontWeight="500">
-              {t("Business TIN")}
+              {t("Business Operation Number")}
             </Typography>
             <CustomDivider border="1px" paddingTop="5px" />
           </Grid>
@@ -161,7 +161,7 @@ const BusinessTin = ({
                 />
               </Grid>
               <Grid item xs={12}>
-                <TextField
+                {/* <TextField
                   size="medium"
                   label="Expire Date"
                   fullWidth
@@ -199,7 +199,7 @@ const BusinessTin = ({
                       </InputAdornment>
                     ),
                   }}
-                />
+                /> */}
                 {open && (
                   <CustomModal
                     openModal={open}
@@ -251,7 +251,7 @@ const BusinessTin = ({
                     color: (theme) => theme.palette.neutral[500],
                   }}
                 >
-                  {t("TIN Certificate")}
+                  {t("Business Operation Permit")}
                 </InputLabel>
                 <Typography
                   fontSize="12px"

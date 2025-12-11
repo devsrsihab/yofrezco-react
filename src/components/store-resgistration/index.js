@@ -22,7 +22,7 @@ const StoreRegistration = () => {
   const dispatch = useDispatch();
   const router = useRouter();
   const [resData, setResData] = useState({});
-  const { flag, active ,plan,package:pa} = router.query;
+  const { flag, active, plan, package: pa } = router.query;
 
   const { allData, activeStep } = useSelector((state) => state.storeRegData);
   const [formValues, setFormValues] = useState({});
@@ -103,6 +103,8 @@ const StoreRegistration = () => {
   }, [active]);
 
   const handleActiveStep = () => {
+    console.log("activeStep", activeStep);
+
     if (activeStep === 0) {
       return (
         <StoreRegistrationForm

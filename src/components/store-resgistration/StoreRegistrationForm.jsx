@@ -363,6 +363,7 @@ const StoreRegistrationForm = ({ setActiveStep, setFormValues }) => {
         >
           <Typography fontSize="18px" fontWeight="500" textAlign="left">
             {t("Vendor Info")}
+            adfsfsfs sfs
           </Typography>
           <CustomDivider border="1px" paddingTop="5px" />
           <CustomStackFullWidth padding={{ xs: "7px", md: "2rem" }} mt="1rem">

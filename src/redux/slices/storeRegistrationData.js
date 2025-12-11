@@ -2,7 +2,7 @@ import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
   allData: {},
-  activeStep: null,
+  activeStep: 0,
 };
 
 // Action creators are generated for each case reducer function
