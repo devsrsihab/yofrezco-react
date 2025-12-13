@@ -66,18 +66,20 @@ const TopBanner = () => {
       sx={{
         minHeight: {
           xs: moduleType === "parcel" ? "250px" : "160px",
-          sm: "270px",
-          md: "270px",
+          sm: "290px",
+          md: "290px",
         },
-        backgroundColor: getBGColor(),
+        backgroundColor: "white",
         position: "relative",
         overflow: "hidden",
+        paddingTop: "10px",
       }}
     >
       {getCurrentModuleType() === "rental" ? (
         <Box
           sx={{
             svg: { position: "absolute" },
+
             ".left_img": (theme) => ({
               position: "absolute",
               left: "-150px",
@@ -117,15 +119,22 @@ const TopBanner = () => {
             position: "absolute",
             height: "100%",
             width: "100%",
-            img: { objectFit: "cover", width: "100%", height: "100%" },
+            display: "flex",
+            justifyContent: "center", // ⭐ centers image horizontally
+            alignItems: "center", // ⭐ centers vertically
+            overflow: "hidden",
           }}
         >
           <Image
-            width={1917}
-            height={270}
             src={banngerBg}
             alt="banner"
-            priority={true}
+            width={1200}
+            height={270}
+            style={{
+              objectFit: "contain",
+              objectPosition: "center 20px", // ⭐ moves image UP
+            }}
+            priority
           />
         </Box>
       )}

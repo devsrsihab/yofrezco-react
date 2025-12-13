@@ -1,10 +1,8 @@
 import { Box, NoSsr, Stack, useMediaQuery } from "@mui/material";
 import React, { useState } from "react";
 import { CustomStackForLoaction } from "../NavBar.style";
-import ThemeSwitches from "./ThemeSwitches";
 import AddressReselect from "./address-reselect/AddressReselect";
 import CustomLanguage from "./language/CustomLanguage";
-
 import { useSelector } from "react-redux";
 import CallToAdmin from "../../CallToAdmin";
 import CustomContainer from "../../container";
@@ -16,11 +14,14 @@ const TopNavBar = () => {
     (state) => state.configData
   );
   const [openDrawer, setOpenDrawer] = useState(false);
+
   let location = undefined;
   if (typeof window !== "undefined") {
     location = localStorage.getItem("location");
   }
+
   const isSmall = useMediaQuery("(max-width:1180px)");
+
   return (
     <>
       <NoSsr>
@@ -30,6 +31,7 @@ const TopNavBar = () => {
             background: (theme) => theme.palette.neutral[100],
           }}
         >
+          {/* DESKTOP VIEW */}
           {!isSmall && (
             <CustomContainer>
               <Box
@@ -54,13 +56,13 @@ const TopNavBar = () => {
                       />
                     )}
                   </CustomStackForLoaction>
+
                   <Stack
                     direction="row"
                     spacing={2}
                     justifyContent="end"
                     alignItems="center"
                   >
-                    {/* <ThemeSwitches /> */}
                     {configData?.phone && (
                       <CallToAdmin configData={configData} />
                     )}
@@ -72,31 +74,47 @@ const TopNavBar = () => {
                   </Stack>
                 </Stack>
               </Box>
-              {!location && (
-                <Box
-                  sx={{
-                    display: {
-                      xs: "flex",
-                      md: "none",
-                      alignItems: "center",
-                      gap: "10px",
-                      flexDirection: "row",
-                      justifyContent: " space-between ",
-                    },
-                    flexGrow: 1,
-                  }}
-                >
-                  <Stack alignItems="center" justifyContent="flex-start">
-                    <LogoSide width="126px" configData={configData} />
-                  </Stack>
-                  <Stack>
-                    <DrawerMenu
-                      openDrawer={openDrawer}
+            </CustomContainer>
+          )}
+
+          {/* MOBILE VIEW */}
+          {isSmall && (
+            <CustomContainer>
+              <Box
+                sx={{
+                  display: {
+                    xs: "grid",
+                    md: "none",
+                  },
+                  gridTemplateColumns: "1fr auto 1fr",
+                  alignItems: "center",
+                  width: "100%",
+                  py: 1,
+                }}
+              >
+                {/* LEFT — LOCATION */}
+                <Box display="flex" justifyContent="flex-start">
+                  {location && (
+                    <AddressReselect
                       setOpenDrawer={setOpenDrawer}
+                      location={location}
                     />
-                  </Stack>
+                  )}
                 </Box>
-              )}
+
+                {/* CENTER — LOGO */}
+                <Box display="flex" alignItems="center" justifyContent="center">
+                  <LogoSide width="126px" configData={configData} />
+                </Box>
+
+                {/* RIGHT — DRAWER MENU */}
+                <Box display="flex" justifyContent="flex-end">
+                  <DrawerMenu
+                    openDrawer={openDrawer}
+                    setOpenDrawer={setOpenDrawer}
+                  />
+                </Box>
+              </Box>
             </CustomContainer>
           )}
         </Box>
